@@ -141,6 +141,10 @@
   <ItemGroup>
     <ClCompile Include="SubsetSumProblem.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SubsetSumSolver.h" />
+    <ClInclude Include="SubsetToSum.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
