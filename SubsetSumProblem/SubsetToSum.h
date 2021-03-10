@@ -6,7 +6,7 @@ class SubsetToSum {
 
 public:
     T sum;
-    std::vector subset;
+    std::vector<T> subset;
 
-    SubsetToSum(T sum, std::vector subset) sum(sum) subset(subset) {}
+    SubsetToSum(T sum, std::vector<T> subset) : sum(sum), subset(subset) {}
 };

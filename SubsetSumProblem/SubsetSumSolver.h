@@ -1,23 +1,28 @@
 #pragma once
 #include <vector>
 #include <map>
+#include <iostream>
 #include "SubsetToSum.h"
+
+using namespace std;
 
 template <class T>
 class SubsetSumSolver {
 
 public:
 
-    std::vector<T> solve(std::vector<T> inputSet, T sum) {
+    vector<T> solve(vector<T> inputSet, T sum) {
 
         SubsetToSum<T>** table = new SubsetToSum<T>*[inputSet.size()];
 
-        for (int i = 0; i < inputSet.size(); i++) {
-            table[i] = new SubsetToSum<T>[sum + 1];
+        for (int i = 0; i < (int)inputSet.size(); i++) {
+            table[i] = new SubsetToSum[sum + 1];
         }
 
         for (int i = 0; i < inputSet.size(); i++) {
+            cout << i << ", ";
             for (T j = 0; j < sum; j++) {
+                cout << j << ", ";
                 if (j == 0) {
                     SubsetToSum<T> subsetToSum(0, nullptr);
                     table[i][j] = subsetToSum;
@@ -29,9 +34,10 @@ public:
                     copyValueFromPreviousRow(table, i, j);
                 }
                 else {
-                    determineElementValue()
+                    determineElementValue();
                 }
             }
+            cout << endl;
         }
 
 
